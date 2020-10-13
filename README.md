@@ -10,8 +10,7 @@ DOM ELEMTNS
     //give them values 
     // button to to cath the pokemon
     //div to display caught pokemon
-    A single, individual user session (which the user can click a clear button to play again)
-
+    
 
 INITIAL STATE
     //Pokemon data stored in a variable
