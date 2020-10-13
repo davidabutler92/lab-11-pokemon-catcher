@@ -1,1 +1,39 @@
 /* add home page styles here */
+img {
+    height: 150px ;
+    width: 150px;
+}
+
+.inline { 
+    display: inline-block;
+}
+
+section {
+    display: flex;
+    grid-template-columns: 25% 25% 25%;
+    justify-content: space-between;
+}
+
+body {
+    background: rgb(254,170,76);
+background: linear-gradient(90deg, rgba(254,170,76,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+}
+
+section {
+    display: flex;
+    justify-content: center;
+}
+
+.pokeball{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    background: #fff;
+    border: 5px solid #000;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: inset -10px 10px 0 10px #ccc;
+    animation: shake 1.25s cubic-bezier(.36,.07,.19,.97) infinite;
+    animation-play-state: paused;
+    background-color: rgb(233, 224, 224);
+}
