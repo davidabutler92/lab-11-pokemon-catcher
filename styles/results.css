@@ -1,0 +1,8 @@
+canvas {
+    /* background-image: url("https://vignette.wikia.nocookie.net/epicrapbattlesofhistory/images/c/c9/Pok%C3%A9mon_Go_Grass_Field_Based_On.jpg/revision/latest/scale-to-width-down/340?cb=20190526123323"); */
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size: cover; 
+    border-radius: 20px;
+    border: rgb(231, 226, 226) solid 10px;
+}
