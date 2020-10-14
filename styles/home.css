@@ -37,3 +37,8 @@ section {
     animation-play-state: paused;
     background-color: rgb(233, 224, 224);
 }
+
+
+.color {
+    background-color: rgb(66, 221, 66);
+}
