@@ -28,7 +28,7 @@ function renderLineItems(pokemon) {
     encountered.textContent = pokemon.encountered;
     tdName.textContent = pokemon.pokemon;
 
-    tr.append(tdName, captured, encountered);
+    tr.append(tdName, encountered, captured);
 
     return tr;
 }
@@ -46,19 +46,40 @@ const pokemonNames = pokemonResultsData.map((item) => {
 const capturedData = pokemonResultsData.map((item) => {
     return item.captured;
 });
+const encounteredData = pokemonResultsData.map((item) => {
+    return item.encountered;
+});
 
 var ctx = document.getElementById('myChart').getContext('2d');
-var chart = new Chart(ctx, { //eslint-disable-line
+var chart = new Chart(ctx, { //eslint-disable-line                   
     // The type of chart we want to create
-    type: 'bar',
+    type: 'pie',
 
     // The data for our dataset
     data: {
         labels: pokemonNames,
         datasets: [{
-            label: 'My First dataset',
-            backgroundColor: 'rgb(66, 221, 66)',
-            borderColor: 'rgb(255, 99, 132)',
+            label: 'Captured Pokemon Data',
+            defaultFontColor: 'white',
+            defaultFontSize: 15,
+            backgroundColor: [
+                'red',
+                'blue',
+                'green',
+                'yellow',
+                'orange',
+                'purple',
+                'white',
+                'teal',
+                'pink',
+                'magenta',
+                'lightgrey',
+                'lightblue',
+                'lightgreen',
+                'tan',
+            ],
+            borderColor: 'rgb(224, 216, 216)',
+            color: 'white',
             data: capturedData,
         }]
     },
