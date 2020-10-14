@@ -1,4 +1,5 @@
 import { pokemon } from './api.js';
+import { POKEMON } from './constants.js';
 
 export function getRandomPokemon(pokemon) {
     const randomPokemon = Math.floor(Math.random() * pokemon.length);
@@ -12,4 +13,14 @@ export function findByName(someArray, someId) {
             return item;
         }
     }
+}
+
+export function getFromLocalStorage(key) {
+    const item = localStorage.getItem(key);
+    return JSON.parse(item);
+}
+
+export function setInLocalStorage(key, value) {
+    const stringyItem = JSON.stringify(value);
+    localStorage.setItem(key, stringyItem);
 }

@@ -1,10 +1,10 @@
 // import functions and grab DOM elements
 import { pokemon } from './api.js';
-import { getRandomPokemon, findByName } from './helper-functions.js';
+import { POKEMON } from './constants.js';
+import { getRandomPokemon, findByName, setInLocalStorage } from './helper-functions.js';
 
 const pokeImageTags = document.querySelectorAll('img');
 const pokeRadioTags = document.querySelectorAll('input');
-
 
 const pokeCart = [];
 let pokeballs = 10;
@@ -12,7 +12,8 @@ let pokeballs = 10;
 for (let i = 0; i < pokeRadioTags.length; i++) {
     pokeRadioTags[i].addEventListener('click', (e) => {
         if (pokeballs === 0) {
-            alert('You are out of pokeballs!');
+            alert('You ran out of pokeballs! Let\'s see your catch!');
+            window.location.href = './results-page/index.html';
         } else {
             pokeballs--;
         }
@@ -33,7 +34,7 @@ for (let i = 0; i < pokeRadioTags.length; i++) {
         }
         const capturedPokemon = findByName(pokeCart, e.target.value);
         capturedPokemon.captured++;
-        console.log(pokeCart);
+        setInLocalStorage(POKEMON, pokeCart);
         renderPokemon();
     });
 }
