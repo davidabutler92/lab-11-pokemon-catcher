@@ -2,6 +2,8 @@ import { pokemon } from '../api.js';
 import { POKEMON } from '../constants.js';
 import { getFromLocalStorage } from '../helper-functions.js';
 
+const button = document.querySelector('button');
+
 function renderTable() {
     const table = document.querySelector('tbody');
     const pokemonResults = getFromLocalStorage('POKEMON') || [];
@@ -30,6 +32,11 @@ function renderLineItems(pokemon) {
 
     return tr;
 }
+
+button.addEventListener('click', () => {
+    localStorage.clear();
+    window.location.href = '../index.html';
+});
 
 const pokemonResultsData = getFromLocalStorage('POKEMON');
 
