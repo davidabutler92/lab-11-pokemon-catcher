@@ -8,13 +8,19 @@ const pokeRadioTags = document.querySelectorAll('input');
 const pokemonName = document.querySelectorAll('.pokemon-name');
 const pokemonEnounters = document.querySelectorAll('.pokemon-encounters');
 const pokemonCaptured = document.querySelectorAll('.pokemon-captured');
+const audio = document.getElementById('audio');
 
+
+function playAudio() {
+    audio.play();
+}
 
 const pokeCart = [];
 let pokeballs = 10;
 
 for (let i = 0; i < pokeRadioTags.length; i++) {
     pokeRadioTags[i].addEventListener('click', (e) => {
+        playAudio();
         if (pokeballs === 0) {
             alert('You ran out of pokeballs! Let\'s see your catch!');
             window.location.href = './results-page/index.html';
@@ -69,8 +75,6 @@ export function renderPokemon() {
     pokeImageTags[2].src = pokemonThree.url_image;
     pokeRadioTags[2].checked = false;
     pokemonName[2].textContent = pokemonThree.pokemon;
-
-
 }
 
 renderPokemon();
