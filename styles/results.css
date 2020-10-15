@@ -6,3 +6,7 @@ canvas {
     border-radius: 20px;
     border: rgb(231, 226, 226) solid 10px;
 }
+
+.my_audio {
+    display: none;
+}
