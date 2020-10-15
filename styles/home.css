@@ -4,6 +4,10 @@ img {
     width: 150px;
 }
 
+.my_audio {
+    display: none;
+}
+
 .inline { 
     display: inline-block;
 }

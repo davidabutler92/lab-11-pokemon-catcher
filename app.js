@@ -5,12 +5,22 @@ import { getRandomPokemon, findByName, setInLocalStorage } from './helper-functi
 
 const pokeImageTags = document.querySelectorAll('img');
 const pokeRadioTags = document.querySelectorAll('input');
+const pokemonName = document.querySelectorAll('.pokemon-name');
+const pokemonEnounters = document.querySelectorAll('.pokemon-encounters');
+const pokemonCaptured = document.querySelectorAll('.pokemon-captured');
+const audio = document.getElementById('audio');
+
+
+function playAudio() {
+    audio.play();
+}
 
 const pokeCart = [];
 let pokeballs = 10;
 
 for (let i = 0; i < pokeRadioTags.length; i++) {
     pokeRadioTags[i].addEventListener('click', (e) => {
+        playAudio();
         if (pokeballs === 0) {
             alert('You ran out of pokeballs! Let\'s see your catch!');
             window.location.href = './results-page/index.html';
@@ -31,6 +41,8 @@ for (let i = 0; i < pokeRadioTags.length; i++) {
             } else {
                 item.encountered++;
             }
+            pokemonEnounters[i].textContent = `Encounters: ${item.encountered}`;
+            pokemonCaptured[i].textContent = `Captured: ${item.captured}`;
         }
         const capturedPokemon = findByName(pokeCart, e.target.value);
         capturedPokemon.captured++;
@@ -50,10 +62,19 @@ export function renderPokemon() {
     }  
     pokeRadioTags[0].value = pokemonOne.pokemon;
     pokeImageTags[0].src = pokemonOne.url_image;
+    pokeRadioTags[0].checked = false;
+    pokemonName[0].textContent = pokemonOne.pokemon;
+
     pokeRadioTags[1].value = pokemonTwo.pokemon;
     pokeImageTags[1].src = pokemonTwo.url_image;
+    pokeRadioTags[1].checked = false;
+    pokemonName[1].textContent = pokemonTwo.pokemon;
+
+
     pokeRadioTags[2].value = pokemonThree.pokemon;
     pokeImageTags[2].src = pokemonThree.url_image;
+    pokeRadioTags[2].checked = false;
+    pokemonName[2].textContent = pokemonThree.pokemon;
 }
 
 renderPokemon();

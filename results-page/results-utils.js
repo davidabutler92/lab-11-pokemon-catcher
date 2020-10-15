@@ -3,8 +3,14 @@ import { POKEMON } from '../constants.js';
 import { getFromLocalStorage } from '../helper-functions.js';
 
 const button = document.querySelector('button');
+const audio = document.getElementById('audio');
+
+function playAudio() {
+    audio.play();
+}
 
 function renderTable() {
+    playAudio();
     const table = document.querySelector('tbody');
     const pokemonResults = getFromLocalStorage('POKEMON') || [];
 
